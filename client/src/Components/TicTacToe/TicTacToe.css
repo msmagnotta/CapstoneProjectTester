@@ -1,0 +1,137 @@
+.container {
+    text-align: center;
+}
+
+
+
+.title {
+    margin-top: 50px;
+    color: white;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title img {
+    height: 50px;
+    height: 50px;
+    padding-left: 15px;
+
+}
+
+.game-button {
+    background-color: white;
+    /* Green */
+    border: none;
+    color: darkgrey;
+    
+
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.game-button:hover {
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    /* Darker Green */
+}
+
+.boxes {
+    height: 130px;
+    width: 130px;
+    background-color: aliceblue;
+    border: 4px, black;
+    border-radius: 12px;
+    cursor:pointer;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes img{
+    margin: 25px 10px;
+}
+.boxHeaderTop {
+    height: 30px;
+    width: 130px;
+    font-size: 24px;
+    margin: 25px 10px;
+    color: white;
+}
+.boxHeadersTopMargin{
+    margin-left: 150px;
+}
+.boxHeaderLeft {
+    height: 130px;
+    width: 130px;
+    font-size: 24px;
+    /* margin: 25px 10px; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    color: white;
+}
+.boxHeadersLeftMargin {
+    margin-top: 20px;
+}
+
+.board{
+    justify-content: center;
+    height: 600px;
+    /* width: 564px; */
+    width: 600px;
+    /* display: flex; */
+    margin: auto;
+}
+.row {
+    display: inline-flex;
+    flex-direction: row;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gameMessage{
+    font-size: 24px;
+    color: white;
+}
+.ready-clicked{
+    background-color: grey;
+}
+.back-button {
+    position: fixed; /* Positions the button relative to the viewport */
+    top: 20px; /* Adjusts the top position */
+    left: 20px; /* Adjusts the left position */
+    background-color: white;
+    padding: 10px 16px;
+    border: none;
+    color: darkgrey;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    z-index: 1000; /* Ensures the button stays above other content */
+}
+
+/* Additional styling for hover effect */
+.back-button:hover {
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+}
