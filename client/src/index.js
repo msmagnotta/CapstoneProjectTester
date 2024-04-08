@@ -4,14 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+/**
+ * Root element to render the application.
+ * @type {ReactRoot}
+ */
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Render the application within a React Strict Mode.
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+/**
+ * Function to measure and report web vitals performance.
+ * @function
+ * @param {Function} [onPerfEntry] - Callback function to log performance results.
+ * @returns {void}
+ * @see {@link https://bit.ly/CRA-vitals} For more information on measuring performance.
+ */
 reportWebVitals();
