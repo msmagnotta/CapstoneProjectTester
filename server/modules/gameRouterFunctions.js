@@ -2,14 +2,34 @@
 const Room = require('../modules/Room')
 const uuid = require('uuid')
 
+/**
+ * Finds the next available room from the list of rooms.
+ * @param {Array} rooms - List of rooms.
+ * @returns {Room|undefined} The next available room or undefined if no room is available.
+ */
+
 function findNextAvailableRoom(rooms){
     return rooms.find(room => !room.isFull())
   }
   
-  /* Finds a player's room based on the player's name */
+  /**
+ * Finds a player's room based on the player's name.
+ * @param {string} player - The name of the player.
+ * @param {Array} rooms - List of rooms.
+ * @returns {Room|undefined} The player's room or undefined if the player is not in any room.
+ */
+
   function findPlayerRoom(player, rooms){
     return rooms.find(room => room.hasPlayer(player) )
   }
+  
+  /**
+ * Handles the player's request to join a room.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Array} rooms - List of rooms.
+ */
+  
   function join(req, res, rooms ){
     let player = req.headers.origin
     let isInRoom = findPlayerRoom(player, rooms)
@@ -31,6 +51,14 @@ function findNextAvailableRoom(rooms){
     
     res.status(200).json({roomID: room.roomId})
   }
+
+  /**
+ * Handles the player's request to set their status to ready.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Array} rooms - List of rooms.
+ */
+
   function ready(req,res,rooms){
     console.log("GET /ready")
   let player = req.headers.origin
@@ -61,6 +89,14 @@ function findNextAvailableRoom(rooms){
   /* Any subsequent calls to /ready will return Game already started */
   res.status(200).json({message: "Game already started"})
   }
+
+  /**
+ * Handles the player's request to wait for their turn.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Array} rooms - List of rooms.
+ */
+
   function waitTurn(req,res, rooms){
     console.log("GET /waitTurn")
   let player = req.headers.origin
@@ -96,6 +132,14 @@ function findNextAvailableRoom(rooms){
     return
   }
   }
+
+  /**
+ * Handles the player's move request.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Array} rooms - List of rooms.
+ */
+
   function move(req,res, rooms){
     console.log(`Post /move `);
   console.log(rooms);
